@@ -2,7 +2,7 @@
 TO-DO
 
 - [ ] Perfil pessoal
-  - [ ] Template HTML
+  - [X] Template HTML
   - [ ] Alterar os dados e imagem para um fulano de tal
   - [ ] Estilizar (CSS)
   
