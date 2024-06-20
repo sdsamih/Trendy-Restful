@@ -3,18 +3,18 @@ TO-DO
 
 - [ ] Perfil pessoal
   - [X] Template HTML
-  - [ ] Alterar os dados e imagem para um fulano de tal
+  - [X] Alterar os dados e imagem para um fulano de tal
   - [ ] Estilizar (CSS)
   
-- [ ] Catálogo de produtos
+~~- [ ] Catálogo de produtos
   - [ ] HTML
-  - [ ] Estilizar (CSS)
+  - [ ] Estilizar (CSS)~~
   
-- [ ] Menu de navegação
-  - [ ] HTML do menu
-  - [ ] Modificar o menu para exibir várias telas diferentes (uma para cada exemplo)
-  - [ ] Estilizar (CSS)
-  - [ ] Adicionar transições suaves
+- [x] Menu de navegação
+  - [x] HTML do menu
+  - [x] Modificar o menu para exibir itens diferentes ao clicar
+  - [x] Estilizar (CSS)
+  - [x] Adicionar transições suaves
   
 - [ ] Formulário de contato
   - [ ] HTML dos campos
