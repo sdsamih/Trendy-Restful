@@ -1,7 +1,7 @@
 $(document).ready(function(){
 $("#scrollHome").click(function(){
     $("html, body").animate({
-        scrollTop: 1300
+        scrollTop: 0
     }, 500);
 });
 $("#scrollNews").click(function(){
