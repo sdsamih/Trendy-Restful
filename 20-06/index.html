@@ -54,9 +54,42 @@
 
         <p style="margin-top: 1000px;">Sobre</p>
         <div>
-            <p style="margin-top: 1000px;">Contact</p>
+            <div id="container">
+                <div id="redes"> 
+                    <p>Entre em contato pelas redes sociais:</p>
+                    <ul>
+                        <li>Instagram</li>
+                        <li>Facebook</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+                <div id="formulario">
+                    <p>Deixe uma mensagem:</p>
+                    <form id="formulario" autocomplete="off" method="POST">
+                        <p>
+                            <label for="nome">Nome:</label> <input type="text" name="nome" id="nome" size="5">
+                        </p>
+            
+                        <p>
+                            <label for="email">Email:</label> <input type="text" name="email" id="email">
+                        </p>
+    
+                        <p>
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea name="mensagem" id="mensagem" rows="5"></textarea>
+                        </p>
+            
+                        <p>
+                            <input type="submit" value="Enviar">
+                        </p>
+                    </form>
+                </div>
         </div>
         <p style="margin-top: 1000px;">About</p>
+    </div>
+
+    <div id="messageBox">
+        Formulário enviado com sucesso!
     </div>
 </body>
 </html>
