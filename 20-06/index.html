@@ -21,19 +21,16 @@
                 <li><button id="scrollHome">Home</button></li>
                 <li><button id="scrollNews">Sobre</button></li>
                 <li><button id="scrollContact">Contact</button></li>
-                <li><button id="scrollAbout">About</button></li>
             </ul>
         </div>
     </div>
     
-
-    
-    <div style="height: 5000px;">
+    <div style="height: 2000px;">
         <div id="home" style="display: flex; align-items: center;">
             <h1 id="h1-home">O Principe <br> do <span style="color: green;">Bra</span><span style="color: #d2ca00">sil</span></h1>
-            <p id="p-home">campeão</p>
             <img src="imagens/vinicius-junior-46-322792798.png" id="img-home">
         </div>
+
         <div id="sobre">
             <img src="imagens/Captura de tela 2024-06-20 124439.png" id="img-sobre">
             
@@ -51,42 +48,38 @@
                 </p>
             </div>        
         </div>
-
-        <p style="margin-top: 1000px;">Sobre</p>
-        <div>
-            <div id="container">
+        <div id="container">
+            <div id="formulario">
+                <form id="formulario" autocomplete="off" method="POST">
+                    <p class="p-form">Envie uma Mensagem para mim!</p>
+                    <p class="p-form">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome" size="5" placeholder="João Marcos da Silva">
+                    </p>
+                    <p class="p-form">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" placeholder="Gustavo@email.com">
+                    </p>
+                    <p class="p-form">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea name="mensagem" id="mensagem" rows="5" placeholder="Digite sua mensagem..."></textarea>
+                    </p>
+                    <p class="p-form">
+                        <input type="submit" value="Enviar">
+                    </p>
+                </form>
                 <div id="redes"> 
-                    <p>Entre em contato pelas redes sociais:</p>
                     <ul>
-                        <li>Instagram</li>
-                        <li>Facebook</li>
-                        <li>Youtube</li>
+                        <li class="li-redes"><a target="_blank" href="https://www.instagram.com/vinijr/"><img src="imagens/instagram.png" class="redeicone"> Instagram</a></li>
+                        <li class="li-redes"><a target="_blank" href="https://www.youtube.com/c/vinijr"><img src="imagens/youtube.png" class="redeicone"> Youtube</a></li>
+                        <li class="li-redes"><a target="_blank" href="https://x.com/vinijr"><img src="imagens/twitter.png" class="redeicone"> Twitter</a></li>
+                        <li class="li-redes"><a target="_blank" href="https://www.facebook.com/viniiciusjunior11"><img src="imagens/facebook.png" class="redeicone"> Facebook</a></li>
                     </ul>
                 </div>
-                <div id="formulario">
-                    <p>Deixe uma mensagem:</p>
-                    <form id="formulario" autocomplete="off" method="POST">
-                        <p>
-                            <label for="nome">Nome:</label> <input type="text" name="nome" id="nome" size="5">
-                        </p>
-            
-                        <p>
-                            <label for="email">Email:</label> <input type="text" name="email" id="email">
-                        </p>
-    
-                        <p>
-                            <label for="mensagem">Mensagem:</label>
-                            <textarea name="mensagem" id="mensagem" rows="5"></textarea>
-                        </p>
-            
-                        <p>
-                            <input type="submit" value="Enviar">
-                        </p>
-                    </form>
-                </div>
+            </div>
+            <img src="imagens/Captura de tela 2024-06-21 001933.png" id="img-container">
         </div>
-        <p style="margin-top: 1000px;">About</p>
-    </div>
+        
 
     <div id="messageBox">
         Formulário enviado com sucesso!
