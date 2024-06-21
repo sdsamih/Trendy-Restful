@@ -6,8 +6,8 @@ $("#scrollHome").click(function(){
 });
 $("#scrollNews").click(function(){
     $("html, body").animate({
-        scrollTop: 2300
-    }, 200);
+        scrollTop: 686
+    }, 500);
 });
 
 $("#scrollContact").click(function(){
