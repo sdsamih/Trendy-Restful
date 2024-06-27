@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Produtos</title>
+    <title>Vini Jr-Portifolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,21 +13,25 @@
 </head>
 <body>
     <div id="menu-geral">
-        <img src="imagens/LOGO-IVJR-BRANCA-1024x375.png" id="logo">
-        <div id="separator"></div>
-        <img src="imagens/Real-Madrid-Logo.png" id="logo">
+        <a href="https://institutovinijr.org.br"target="_blank">
+            <img src="imagens/LOGO-IVJR-BRANCA-1024x375.png" alt="Logo IVJR" id="logo">
+          </a>
+          <div id="separator"></div>
+          <a href="https://www.realmadrid.com/pt-PT"target="_blank">
+            <img src="imagens/Real-Madrid-Logo.png" alt="Logo Real Madrid" id="logo">
+          </a>
         <div id="menu">
             <ul>
-                <li><button id="scrollHome">Home</button></li>
+                <li><button id="scrollHome">Página inicial</button></li>
                 <li><button id="scrollNews">Sobre</button></li>
-                <li><button id="scrollContact">Contact</button></li>
+                <li><button id="scrollContact">Contato</button></li>
             </ul>
         </div>
     </div>
     
     <div style="height: 2000px;">
         <div id="home" style="display: flex; align-items: center;">
-            <h1 id="h1-home">O Principe <br> do <span style="color: green;">Bra</span><span style="color: #d2ca00">sil</span></h1>
+            <h1 id="h1-home">Predestinado<br> do <span style="color: green;">Bra</span><span style="color: #d2ca00">sil</span><span style="font-size: 28px; text-align: center; color: #034C8C "> > Vinicius Júnior </span></h1>
             <img src="imagens/vinicius-junior-46-322792798.png" id="img-home">
         </div>
 
@@ -54,11 +58,11 @@
                     <p class="p-form">Envie uma Mensagem para mim!</p>
                     <p class="p-form">
                         <label for="nome">Nome:</label>
-                        <input type="text" name="nome" id="nome" size="5" placeholder="João Marcos da Silva">
+                        <input type="text" name="nome" id="nome" size="5" placeholder="Neymar da Silva Santos Júnior ">
                     </p>
                     <p class="p-form">
                         <label for="email">Email:</label>
-                        <input type="text" name="email" id="email" placeholder="Gustavo@email.com">
+                        <input type="text" name="email" id="email" placeholder="neymar@gmail.com">
                     </p>
                     <p class="p-form">
                         <label for="mensagem">Mensagem:</label>
@@ -68,6 +72,7 @@
                         <input type="submit" value="Enviar">
                     </p>
                 </form>
+                <div id="messageBox">Mensagem enviada com sucesso!</div>
                 <div id="redes"> 
                     <ul>
                         <li class="li-redes"><a target="_blank" href="https://www.instagram.com/vinijr/"><img src="imagens/instagram.png" class="redeicone"> Instagram</a></li>
@@ -78,11 +83,10 @@
                 </div>
             </div>
             <img src="imagens/Captura de tela 2024-06-21 001933.png" id="img-container">
+            
         </div>
-        
-
-    <div id="messageBox">
-        Formulário enviado com sucesso!
-    </div>
+        <div style="text-align: center;padding: 3px;">
+            <p>&copy; 2024 DACC-UNIR. Desenvolvido por Wyllgner França e Samih Santos</p>
+          </div>
 </body>
 </html>
