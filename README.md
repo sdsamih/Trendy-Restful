@@ -1,10 +1,10 @@
 # WDI---UNIR-
 TO-DO
 
-- [ ] Perfil pessoal
+- [x] Perfil pessoal
   - [X] Template HTML
   - [X] Alterar os dados e imagem para um fulano de tal
-  - [ ] Estilizar (CSS)
+  - [X] Estilizar (CSS)
   
 ~~- [ ] Catálogo de produtos
   - [ ] HTML
@@ -16,7 +16,7 @@ TO-DO
   - [x] Estilizar (CSS)
   - [x] Adicionar transições suaves
   
-- [ ] Formulário de contato
-  - [ ] HTML dos campos
-  - [ ] Botão que faz aparecer a mensagem de que foi enviado
-  - [ ] Estilizar (CSS)
+- [x] Formulário de contato
+  - [x] HTML dos campos
+  - [x] Botão que faz aparecer a mensagem de que foi enviado
+  - [x] Estilizar (CSS)
