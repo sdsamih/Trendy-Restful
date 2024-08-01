@@ -5,7 +5,7 @@ class Tweet extends Model
 {
 
     protected $table = 'tweets';
-    protected $fillable = ['username', 'content'];
+    protected $fillable = ['username', 'content','user_id'];
     public $timestamps = true;
     
     public function likes()
