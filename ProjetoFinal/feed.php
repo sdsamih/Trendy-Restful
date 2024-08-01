@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_tweet'])) {
 
     if ($tweet && $tweet->username === $loggedInUser) {
         $tweet->content = $newContent;
+        $tweet->is_edited = true;
         $tweet->save();
     }
 
@@ -172,6 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
     </style>
 </head>
 <body>
+
     <!-- Container de botões flutuantes -->
     <div class="floating-buttons">
         <!-- Nome de usuário flutuante -->
@@ -198,26 +200,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
 
         <!-- Exibição dos tweets -->
         <div class="tweet-container">
-            <?php foreach ($tweets as $tweet): ?>
+            <?php
+            // Verifica se há um ID de tweet na URL
+            $editTweetId = isset($_GET['edit']) ? intval($_GET['edit']) : null;
+
+            foreach ($tweets as $tweet): ?>
                 <div class="tweet">
                     <p><strong>@<?php echo htmlspecialchars($tweet->username); ?></strong></p>
                     <p><?php echo nl2br(htmlspecialchars($tweet->content)); ?></p>
-                    <small><?php echo htmlspecialchars($tweet->created_at); ?></small>
+                    <small><?php echo htmlspecialchars($tweet->created_at); ?><?php echo $tweet->is_edited ? ' (editado)' : ''; ?></small>
 
                     <?php if ($tweet->username === $loggedInUser): ?>
                         <div class="tweet-actions">
+                            <!-- Botão para editar o tweet -->
+                            <a href="feed.php?edit=<?php echo $tweet->id; ?>" style="background-color: #1DA1F2; border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; text-decoration: none;">Editar</a>
+
                             <!-- Formulário para apagar o tweet -->
                             <form action="feed.php" method="POST" style="display:inline;">
                                 <input type="hidden" name="tweet_id" value="<?php echo $tweet->id; ?>">
                                 <button type="submit" name="delete_tweet" style="background-color: #E0245E; border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Apagar</button>
                             </form>
 
-                            <!-- Formulário para editar o tweet -->
-                            <form action="feed.php" method="POST" style="display:inline;">
-                                <input type="hidden" name="tweet_id" value="<?php echo $tweet->id; ?>">
-                                <input type="text" name="tweet_content" value="<?php echo htmlspecialchars($tweet->content); ?>" required>
-                                <button type="submit" name="edit_tweet" style="background-color: #1DA1F2; border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Editar</button>
-                            </form>
+                            <?php if ($editTweetId === $tweet->id): ?>
+                                <!-- Formulário para editar o tweet -->
+                                <form action="feed.php" method="POST" style="display:inline;">
+                                    <input type="hidden" name="tweet_id" value="<?php echo $tweet->id; ?>">
+                                    <input type="text" name="tweet_content" value="<?php echo htmlspecialchars($tweet->content); ?>" required>
+                                    <button type="submit" name="edit_tweet" style="background-color: #1DA1F2; border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer;">Salvar</button>
+                                </form>
+                            <?php endif; ?>
                         </div>
                     <?php endif; ?>
                 </div>

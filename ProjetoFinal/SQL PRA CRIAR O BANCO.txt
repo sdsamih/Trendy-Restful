@@ -19,5 +19,6 @@ CREATE TABLE `users` (
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+ALTER TABLE tweets ADD COLUMN is_edited BOOLEAN DEFAULT FALSE;
 
 obs: o database.php ta na porta 3310, se for usar outra mude la
