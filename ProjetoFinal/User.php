@@ -7,5 +7,11 @@ class User extends Eloquent
     public $timestamps = false;
     protected $table = 'users';
     protected $fillable = ['username', 'password'];
+
+    public function likes()
+    {
+        return $this->hasMany('Like', 'user_id');
+    }
 }
+
 ?>

@@ -4,6 +4,7 @@ CREATE TABLE `tweets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `content` text NOT NULL,
+  `is_edited` BOOLEAN DEFAULT FALSE,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
