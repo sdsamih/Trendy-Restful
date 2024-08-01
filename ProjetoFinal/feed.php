@@ -183,18 +183,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
 
         /* container de tweets */
         .tweet-container {
+            width: 100%;
+
             border-top: 1px solid #e1e8ed;
             padding-top: 20px;
         }
 
         .tweet {
+            width: 100%;
             border-bottom: 1px solid #e1e8ed;
             padding: 10px 0;
         }
 
         .tweet p {
+            width: 100%;
             margin: 0;
+            word-wrap: break-word;
+            word-break: break-all;
         }
+
 
         .tweet small {
             color: #657786;
@@ -289,11 +296,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
         <!-- Formulário para novo tweet -->
         <div class="tweet-form">
             <form action="feed.php" method="POST">
-                <textarea name="tweet" placeholder="O que está acontecendo?" rows="4" required></textarea>
+                <textarea style="resize: none;" placeholder="O que está acontecendo?" name="tweet" maxlength="28/0" rows="4" required></textarea>
                 <button type="submit">Tweetar</button>
             </form>
         </div>
-
         <!-- Exibição dos tweets -->
         <div class="tweet-container">
             <?php
