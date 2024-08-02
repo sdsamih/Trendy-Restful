@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
     <style>
         /* estilos gerais */
         body {
-            background-color: #BFBFBF;
+            background-color: #89d7d4;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
             margin-top: 65px;
             margin-left: 20%;
             margin-right: 20%;
-            background-color: #bae5fd;
+            background-color: #fffcdb;
             max-width: 100%;
             padding: 20px;
         }
@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
 
         /* botão do nome de usuário */
         .username-badge {
-            background-color: #1DA1F2;
+            background-color: #0ea8e9;
             /* cor do Twitter */
             color: white;
             padding: 10px 20px;
@@ -173,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
         }
 
         .tweet-form button {
-            background-color: #1DA1F2;
+            background-color: #0ea8e9;
             /* cor do Twitter */
             color: white;
             border: none;
@@ -320,7 +320,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
                         <!-- Botão para curtir/descurtir o tweet -->
                         <form action="feed.php" method="POST" style="display:inline;">
                             <input type="hidden" name="tweet_id" value="<?php echo $tweet->id; ?>">
-                            <button type="submit" name="like_tweet" style="background-color: <?php echo $userLiked ? '#E0245E' : '#1DA1F2'; ?>; border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
+                            <button type="submit" name="like_tweet" style="background-color: <?php echo $userLiked ? '#E0245E' : '#0ea8e9'; ?>; border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer;">
                                 <?php echo $userLiked ? 'Descurtir' : 'Curtir'; ?>
                             </button>
                             <span><?php echo $likeCount; ?> curtidas</span>
@@ -328,7 +328,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
 
                         <!-- Botão para editar o tweet (exibido somente se o usuário logado for o autor) -->
                         <?php if ($tweet->username === $loggedInUser) : ?>
-                            <a href="feed.php?edit=<?php echo $tweet->id; ?>" style="background-color: #1DA1F2; border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; text-decoration: none; margin-left: 10px;">Editar</a>
+                            <a href="feed.php?edit=<?php echo $tweet->id; ?>" style="background-color: #0ea8e9; border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; text-decoration: none; margin-left: 10px;">Editar</a>
 
                             <!-- Formulário para deletar o tweet -->
                             <form action="feed.php" method="POST" style="display:inline;">
