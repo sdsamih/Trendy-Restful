@@ -41,6 +41,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     .login-container{
         background-color: #FDFCF7;
     }
+    footer {
+            background-color: #0ea8e9;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            margin-top: 100%;
+
+            width: 100%;
+        }
 </style>
 <body>
     <div class="login-container">
@@ -63,5 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
         <p>Não tem uma conta? <a href="register.html">Registrar</a></p>
     </div>
+    <footer>
+        <p>&copy; 2024 TRENDY. Desenvolvido por: Samih Santos e Wyllgner França</p>
+    </footer>
 </body>
 </html>
