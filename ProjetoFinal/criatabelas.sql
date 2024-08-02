@@ -32,7 +32,7 @@ CREATE TABLE `likes` (
   `user_id` int(11) NOT NULL,
   KEY `likes_users_FK` (`user_id`),
   KEY `likes_tweets_FK` (`tweet_id`),
-  CONSTRAINT `likes_tweets_FK` FOREIGN KEY (`tweet_id`) REFERENCES `tweets` (`id`),
+  CONSTRAINT `likes_tweets_FK` FOREIGN KEY (`tweet_id`) REFERENCES `tweets` (`id`) ON DELETE CASCADE,
   CONSTRAINT `likes_users_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

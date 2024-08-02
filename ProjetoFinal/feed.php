@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_tweet'])) {
     $newContent = $_POST['tweet_content'];
     $tweet = Tweet::find($tweetId);
 
-    if ($tweet && $tweet->username === $loggedInUser) {
+    if ($tweet && $tweet->user_id === $_SESSION['user_id']) {
         $tweet->content = $newContent;
         $tweet->is_edited = true;
         $tweet->save();
@@ -371,7 +371,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
                         </form>
 
                         <!-- Botão para editar o tweet (exibido somente se o usuário logado for o autor) -->
-                        <?php if ($tweet->username === $loggedInUser) : ?>
+                        <?php if ($tweet->user_id == $_SESSION['user_id']) : ?>
                             <a href="feed.php?edit=<?php echo $tweet->id; ?>">Editar</a>
 
                             <!-- Formulário para deletar o tweet -->
@@ -383,7 +383,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
                     </div>
 
                     <!-- Formulário de edição (exibido somente se o usuário logado for o autor) -->
-                    <?php if (isset($_GET['edit']) && $_GET['edit'] == $tweet->id && $tweet->username === $loggedInUser) : ?>
+                    <?php if (isset($_GET['edit']) && $_GET['edit'] == $tweet->id && $tweet->user_id === $_SESSION['user_id']) : ?>
                         <form action="feed.php" method="POST">
                             <input type="hidden" name="tweet_id" value="<?php echo $tweet->id; ?>">
                             <textarea id="textedit" name="tweet_content" rows="4" maxlength="280" required><?php echo htmlspecialchars($tweet->content); ?></textarea>
