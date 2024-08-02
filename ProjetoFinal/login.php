@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Usuário encontrado, iniciar sessão
         $_SESSION['user_id'] = $user->id;
         $_SESSION['username'] = $user->username;
+        $_SESSION['cargo'] = $user->cargo;
         header('Location: feed.php'); // Redirecionar para o feed
         exit;
     } else {
