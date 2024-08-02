@@ -43,9 +43,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Register - Twitter Clone</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    body{
+        background-color: #89d7d4;
+    }
+    .register-container{
+        background-color: #FDFCF7;
+    }
+</style>
 <body>
     <div class="register-container">
-        <h2>Register</h2>
+    <a>
+            <img src="TRENDY.png" alt="Logo trendy" id="logo">
+        </a>
         <?php if (isset($error)): ?>
             <p style="color: red;"><?php echo $error; ?></p>
         <?php endif; ?>
@@ -62,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="confirm_password">Confirm Password</label>
                 <input type="password" id="confirm_password" name="confirm_password" required>
             </div>
-            <button type="submit">Register</button>
+            <button type="submit">Registrar</button>
         </form>
         <p>Already have an account? <a href="index.html">Login</a></p>
     </div>

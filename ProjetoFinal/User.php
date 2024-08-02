@@ -6,7 +6,7 @@ class User extends Eloquent
 {
     public $timestamps = false;
     protected $table = 'users';
-    protected $fillable = ['password','cargo'];
+    protected $fillable = ['password','cargo','username'];
 
     public function likes()
     {

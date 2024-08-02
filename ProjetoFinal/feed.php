@@ -116,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
             margin-top: 65px;
             margin-left: auto;
             margin-right: auto;
-            background-color: #fffcdb;
+            background-color: #FDFCF7;
             max-width: 600px;
             padding: 20px;
             border-radius: 10px;
@@ -234,6 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
     /* Estilos do menu geral */
     #menu-geral {
             display: flex;
+            background-color: #FDFCF7;
             align-items: center;
             justify-content: space-between;
             border: 1px solid rgba(0, 0, 0, 0.299);
@@ -299,6 +300,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
         }
         #edsalva{
             background-color: green;
+            color: #fff; 
+            border: none; 
+            padding: 5px 9px; 
+            cursor: pointer; 
         }
         #edvolta{
             background-color: #E0245E;
@@ -318,8 +323,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
                     </form>
                 </li>
                 <li>
-                    <a href="https://www.realmadrid.com/pt-PT" target="_blank">
-                        <img src="Logo UNIR Horizontal.png" alt="Logo Real Madrid" id="logo">
+                    <a href="feed.php">
+                        <img src="TRENDY.png" alt="Logo Real Madrid" id="logo">
                     </a>
                 </li>
                 <li>
@@ -343,7 +348,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
         <div class="tweet-form">
             <form action="feed.php" method="POST">
                 <textarea placeholder="O que está acontecendo?" name="tweet" maxlength="280" rows="4" required></textarea>
-                <button type="submit">Tweetar</button>
+                <button type="submit">Trendar</button>
             </form>
         </div>
         <!-- Exibição dos tweets -->

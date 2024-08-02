@@ -34,15 +34,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Login - Twitter Clone</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    body{
+        background-color: #89d7d4;
+    }
+    .login-container{
+        background-color: #FDFCF7;
+    }
+</style>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
+        <a>
+            <img src="TRENDY.png" alt="Logo trendy" id="logo">
+        </a>
         <?php if (isset($error)): ?>
             <p style="color: red;"><?php echo $error; ?></p>
         <?php endif; ?>
         <form action="login.php" method="POST">
             <div class="form-group">
-                <label for="username">username</label>
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
