@@ -19,28 +19,35 @@ $user = User::find($_SESSION['user_id']);
 
 // Processa a atualização das informações do usuário
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    var_dump($_POST);
     $newUsername = $_POST['new_username'];
     $newPassword = $_POST['new_password'];
     $confirmPassword = $_POST['confirm_password'];
 
-    if ($newPassword === $confirmPassword) {
-        // Atualiza o nome de usuário
-        $user->username = $newUsername;
+    if (!empty($newPassword) && !empty($confirmPassword)) {
+        if($newPassword === $confirmPassword){
+            $user->password = password_hash($newPassword, PASSWORD_BCRYPT); // Atualiza a senha
+        }
+        else($error ='Senhas não coincidem');
+    }
 
-        // Atualiza a senha (assumindo que você quer hashear a senha)
-        $user->password = password_hash($newPassword, PASSWORD_BCRYPT);
+    
+    $existingUser= User::where('username',$newUsername)->first();
 
-        $user->save();
-
-        // Atualiza a sessão com o novo nome de usuário
-        $_SESSION['username'] = $newUsername;
-
-        // Redireciona para a página do feed após a atualização
-        header('Location: feed.php');
-        exit();
+    if(isset($newUsername) && !empty($newUsername) ){
+        if(!$existingUser || $existingUser->id ==$_SESSION['user_id']){
+            $user->username = $newUsername; // Atualiza o nome de usuário
+            $user->save();
+            $_SESSION['username'] = $newUsername;// Atualiza o username da sessão
+        }
+        else{
+            $error='Username já está em uso';
+        }
     } else {
         $error = 'As senhas não coincidem.';
+    }
+    if(!isset($error)){
+        header('Location: feed.php');
+        exit();
     }
 }
 ?>
@@ -108,16 +115,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="profile-form">
             <form action="profile.php" method="POST">
                 <label for="new_username">Novo Nome de Usuário:</label>
-                <input type="text" name="new_username" id="new_username" value="<?php echo htmlspecialchars($user->username); ?>" required>
+                <input type="text" name="new_username" id="new_username" value="<?php echo htmlspecialchars($user->username); ?>" >
 
                 <label for="new_password">Nova Senha:</label>
-                <input type="password" name="new_password" id="new_password" required>
+                <input type="password" name="new_password" id="new_password" >
 
                 <label for="confirm_password">Confirme a Nova Senha:</label>
-                <input type="password" name="confirm_password" id="confirm_password" required>
+                <input type="password" name="confirm_password" id="confirm_password" >
 
+                
                 <button type="submit">Atualizar</button>
+                
             </form>
+            <br>
+            <a href= "feed.php"><button>Voltar</button></a>
         </div>
     </div>
 </body>

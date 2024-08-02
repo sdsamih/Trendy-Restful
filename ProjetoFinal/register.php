@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Criar novo usuário
             $user = User::create([
                 'username' => $username,
-                'password' => $password,
+                'password' => password_hash($password,PASSWORD_BCRYPT)
             ]);
 
             // Iniciar sessão e redirecionar para o feed

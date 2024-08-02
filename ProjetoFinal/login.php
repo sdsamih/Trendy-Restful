@@ -10,9 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Consulta ao banco de dados usando Eloquent para verificar o usuário e a senha
-    $user = User::where('username', $username)->where('password', $password)->first();
+    $user = User::where('username', $username)->first();
 
-    if ($user) {
+    if ($user && password_verify($password, $user->password)) {
         // Usuário encontrado, iniciar sessão
         $_SESSION['user_id'] = $user->id;
         $_SESSION['username'] = $user->username;
