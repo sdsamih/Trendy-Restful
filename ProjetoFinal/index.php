@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Twitter Clone</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages/assets/style.css">
 </head>
 <style>
     body{
@@ -28,7 +28,7 @@
 <body>
     <div class="login-container">
         <a>
-            <img src="assets/TRENDY.png" alt="Logo trendy" id="logo">
+            <img src="pages/assets/TRENDY.png" alt="Logo trendy" id="logo">
         </a>
         <form action="pages/login.php" method="POST">
             <div class="form-group">

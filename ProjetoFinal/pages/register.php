@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <button type="submit">Registrar</button>
         </form>
-        <p>Already have an account? <a href="../index.html">Login</a></p>
+        <p>Already have an account? <a href="../index.php">Login</a></p>
     </div>
     <footer>
         <p>&copy; 2024 TRENDY. Desenvolvido por: Samih Santos e Wyllgner França</p>

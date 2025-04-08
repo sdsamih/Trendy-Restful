@@ -347,7 +347,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like_tweet'])) {
                 </li>
                 <li>
                     <a href="feed.php">
-                        <img src="TRENDY.png" alt="Trendy logo" id="logo">
+                        <img src="assets/TRENDY.png" alt="Trendy logo" id="logo">
                     </a>
                 </li>
                 <li>

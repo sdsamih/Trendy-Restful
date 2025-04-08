@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Usuário</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <style>
     body{
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="login-container">
         <a>
-            <img src="TRENDY.png" alt="Logo trendy" id="logo">
+            <img src="assets/TRENDY.png" alt="Logo trendy" id="logo">
         </a>
         <?php if (isset($error)) : ?>
             <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
