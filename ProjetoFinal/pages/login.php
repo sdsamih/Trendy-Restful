@@ -1,9 +1,8 @@
 <?php
 session_start();
-require 'vendor/autoload.php';
-require 'database.php';
-require 'User.php';
-
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../database/database.php';
+require __DIR__ . '/../models/User.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];

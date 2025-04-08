@@ -1,7 +1,9 @@
 <?php
-require 'database.php';
-require 'User.php';
-require 'Tweet.php';
+
+require __DIR__ . '/../database/database.php';
+require __DIR__ . '/../models/User.php';
+require __DIR__ . '/../models/Tweet.php';
+
 
 // Inicie a sessão
 session_start();

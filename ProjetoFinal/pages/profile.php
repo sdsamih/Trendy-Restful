@@ -1,6 +1,6 @@
 <?php
-require 'database.php';
-require 'User.php';
+require __DIR__ . '/../database/database.php';
+require __DIR__ . '/../models/User.php';
 
 // Inicie a sessão
 session_start();
